@@ -10,7 +10,7 @@ function Game() {
     const[lockBoard, setLockBoard] = useState(false);
     const[seconds, setSeconds] = useState(0);
     const [isGameOver, setIsGameOver] = useState(false);
-
+const [score, setScore] = useState(0);
     //timer
     useEffect(() => {
         if (isGameOver) return;
@@ -80,6 +80,9 @@ function Game() {
     return (
         <div className="game-container">
             <h1 className="title">Memory Card Game</h1>
+            <p> Time : {formatTime(seconds)}</p>
+            <p>Score: {score}</p>
+            {isGameOver && <p className="game-over">Game Over! Your score: {score}</p>}
             <Board cards={cards} onCardClick={handleCardClick} />
 
         </div>

@@ -3,3 +3,4 @@ export const cardTypes = {
     WILD: "wild",
     TRAP: "trap"
 }
+
