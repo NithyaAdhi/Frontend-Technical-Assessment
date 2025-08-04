@@ -1,0 +1,82 @@
+body{
+  font-family: sans-serif;
+  background-color: #f0f4f8;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.game-container {
+ padding: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4,80px);
+  grid-gap: 12px;
+  justify-content: center;
+
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  perspective: 1000px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-front {
+  background-color: #fff;
+  color: #000;
+}
+.card-back {
+  background-color: #007bff;
+  color: #fff;
+  transform: rotateY(180deg);
+}
+.card.wild {
+  border: 3px solid green; 
+}
+.card.trap {
+  border: 3px solid red; 
+}
+.timer {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.message {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: green;
+  font-weight: bold;
+}
